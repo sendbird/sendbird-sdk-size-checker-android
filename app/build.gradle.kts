@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.emergetools.android")
 }
 
 android {
@@ -33,6 +34,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+}
+
+emerge {
+    apiToken.set("0b574fed-9ce5-4472-9eee-836aaa455c48")
 }
 
 dependencies {
