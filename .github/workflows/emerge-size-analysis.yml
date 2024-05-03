@@ -2,6 +2,7 @@ name: Emerge Size Analysis
 on:
   pull_request:
     branches:
+      - 'main'
       - 'develop'
       - 'feature/*'
 
