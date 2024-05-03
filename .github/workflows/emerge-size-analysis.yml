@@ -1,0 +1,29 @@
+name: Emerge Size Analysis
+on:
+  pull_request:
+    branches:
+      - 'develop'
+      - 'feature/*'
+
+jobs:
+  emerge_size_analysis_automation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: authenticate with GitHub
+        run: |
+          git config --global user.email "sha.sdk_deployment@sendbird.com"
+          git config --global user.name "sha.sdk_deployment"
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+      - uses: actions/checkout@v3
+        with:
+          ref : 'develop'
+      - name: Emerge size analysis
+        run: ./gradlew :app:emergeUploadReleasePerfBundle
+        env:
+          EMERGE_API_TOKEN: '0b574fed-9ce5-4472-9eee-836aaa455c48'
+          PR_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
