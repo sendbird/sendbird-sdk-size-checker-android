@@ -41,6 +41,7 @@ emerge {
         gitHub {
             repoName.set("chat-android")
             repoOwner.set("sendbird")
+
         }
     }
 }
