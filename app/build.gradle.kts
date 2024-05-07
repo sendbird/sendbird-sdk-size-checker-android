@@ -38,6 +38,13 @@ android {
 
 emerge {
     apiToken.set("0b574fed-9ce5-4472-9eee-836aaa455c48")
+
+    vcs {
+        gitHub {
+            repoName.set("sendbird-sdk-size-checker-android")
+            repoOwner.set("sendbird")
+        }
+    }
 }
 
 dependencies {
