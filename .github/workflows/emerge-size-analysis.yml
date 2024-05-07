@@ -26,5 +26,5 @@ jobs:
         run: ./gradlew :app:emergeUploadDebugApk
         env:
           EMERGE_API_TOKEN: ${{ secrets.EMERGE_API_KEY }}
-          PR_SHA: 'd1716f12cb9cda95850e88c4a6a51b5cde7a70bd'
-          PR_BASE_SHA: '8ede7e53eeaa954d1c945c288004134b5ae83118'
+          PR_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
