@@ -25,6 +25,6 @@ jobs:
       - name: Emerge size analysis
         run: ./gradlew :app:emergeUploadDebugApk
         env:
-          EMERGE_API_TOKEN: '0b574fed-9ce5-4472-9eee-836aaa455c48'
+          EMERGE_API_TOKEN: ${{ secrets.EMERGE_API_KEY }}
           PR_SHA: ${{ github.event.pull_request.head.sha }}
           PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
