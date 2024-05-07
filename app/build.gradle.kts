@@ -39,7 +39,7 @@ android {
 emerge {
     vcs {
         gitHub {
-            repoName.set("sendbird-sdk-size-checker-android")
+            repoName.set("chat-android")
             repoOwner.set("sendbird")
         }
     }
