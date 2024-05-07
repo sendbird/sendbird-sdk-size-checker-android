@@ -38,8 +38,13 @@ android {
 
 emerge {
     vcs {
+        sha.set("d1716f12cb9cda95850e88c4a6a51b5cde7a70bd")
+        baseSha.set("8ede7e53eeaa954d1c945c288004134b5ae83118")
+        branchName.set("feature/teddy/emerge-test")
+        prNumber.set("1584")
+
         gitHub {
-            repoName.set("sendbird-sdk-size-checker-android")
+            repoName.set("chat-android")
             repoOwner.set("sendbird")
         }
     }
