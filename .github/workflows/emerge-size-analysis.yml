@@ -27,4 +27,4 @@ jobs:
         env:
           EMERGE_API_TOKEN: ${{ secrets.EMERGE_API_KEY }}
           PR_SHA: ${{ github.event.pull_request.head.sha }}
-          PR_BASE_SHA: '5828433baf479bc6a0cf293887fceb1e1b2ffbf0'
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
