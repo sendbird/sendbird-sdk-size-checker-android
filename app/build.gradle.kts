@@ -51,6 +51,7 @@ emerge {
     vcs {
         gitHub {
             //TODO: Environment variable 로 바꿔서 나중에 다른 곳에서 쓸 수 있게 바꾸기
+
             repoName.set("chat-android")
             repoOwner.set("sendbird")
 //            branchName.set(branchName)
