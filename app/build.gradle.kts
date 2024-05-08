@@ -5,6 +5,7 @@ plugins {
 }
 
 val sdkVersion = System.getenv("CURRENT_SDK_VERSION") ?: "4.16.2"
+val useSdk = System.getenv("USE_SDK")?.toBoolean() ?: false
 
 android {
     namespace = "com.sendbird.sendbirdsdksizechecker"
@@ -51,7 +52,11 @@ emerge {
 
 dependencies {
     //TODO: Enviroment variable 로 바꿔서 나중에 다른 곳에서 쓸 수 있게 바꾸기
-    implementation("com.sendbird.sdk:sendbird-chat-local:$sdkVersion")
+
+    if (useSdk) {
+        implementation("com.sendbird.sdk:sendbird-chat-local:$sdkVersion")
+    }
+
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
