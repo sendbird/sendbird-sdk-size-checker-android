@@ -12,7 +12,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.sendbird.sendbirdsdksizechecker"
+        applicationId = "com.sendbird.chat.android"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -51,6 +51,7 @@ emerge {
     vcs {
         gitHub {
             //TODO: Environment variable 로 바꿔서 나중에 다른 곳에서 쓸 수 있게 바꾸기
+            apiToken.set("0b574fed-9ce5-4472-9eee-836aaa455c48")
             repoName.set("chat-android")
             repoOwner.set("sendbird")
 //            branchName.set(branchName)
