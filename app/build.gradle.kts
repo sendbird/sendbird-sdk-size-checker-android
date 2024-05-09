@@ -12,7 +12,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.sendbird.chat.android"
+        applicationId = "com.sendbird.chat.android.test"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
