@@ -53,12 +53,12 @@ emerge {
 }
 
 fun getAppName(): String {
-    val environment = System.getenv("APP_NAME")
+    val environment = System.getenv("APPLICATION_NAME")
     return environment ?: "SendbirdSdkSizeChecker"
 }
 
 fun getAppId(): String {
-    val environment = System.getenv("APP_ID")
+    val environment = System.getenv("APPLICATION_ID")
     return environment ?: "com.sendbird.sendbirdsdksizechecker"
 }
 
