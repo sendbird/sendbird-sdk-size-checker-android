@@ -6,13 +6,14 @@ plugins {
 
 val sdkVersion = System.getenv("CURRENT_SDK_VERSION") ?: "4.16.2"
 val useSdk = System.getenv("USE_SDK")?.toBoolean() ?: false
+val minifyEnabled = System.getenv("MINIFY_ENABLED")?.toBoolean() ?: false
 
 android {
     namespace = "com.sendbird.sendbirdsdksizechecker"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.sendbird.sendbirdsdksizechecker"
+        applicationId = getAppId()
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -23,7 +24,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = minifyEnabled
+            resValue("string", "app_name", getAppName())
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -48,6 +50,16 @@ emerge {
 
         }
     }
+}
+
+fun getAppName(): String {
+    val environment = System.getenv("APP_NAME")
+    return environment ?: "SendbirdSdkSizeChecker"
+}
+
+fun getAppId(): String {
+    val environment = System.getenv("APP_ID")
+    return environment ?: "com.sendbird.sendbirdsdksizechecker"
 }
 
 dependencies {
