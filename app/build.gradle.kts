@@ -66,7 +66,9 @@ dependencies {
     //TODO: Enviroment variable 로 바꿔서 나중에 다른 곳에서 쓸 수 있게 바꾸기
 
     if (useSdk) {
-        implementation("com.sendbird.sdk:sendbird-chat-local:$sdkVersion")
+        implementation("com.sendbird.sdk:sendbird-chat-local:$sdkVersion") {
+            exclude(group = "org.conscrypt", module = "conscrypt-android")
+        }
     }
 
     implementation("androidx.core:core-ktx:1.12.0")
